@@ -2,7 +2,7 @@
   <div class="space-y-6">
     <!-- 工具标题 -->
     <div class="text-center">
-      <h1 class="text-3xl font-bold text-gradient mb-2">HEX RGB 颜色转换</h1>
+      <h1 class="text-3xl font-bold text-gradient mb-2">颜色转换</h1>
       <p class="text-muted-foreground">多种颜色格式之间的相互转换</p>
     </div>
 
@@ -91,21 +91,23 @@
           <div>
             <label class="text-sm text-muted-foreground">完整格式</label>
             <input
-              v-model="hexColor"
+              v-model="hexInput"
               type="text"
               class="input mt-1"
               placeholder="#FFFFFF"
-              @input="updateFromHex"
+              @input="handleHexInput"
+              @blur="validateHexInput"
             />
           </div>
           <div>
             <label class="text-sm text-muted-foreground">短格式</label>
             <input
-              v-model="hexShort"
+              v-model="hexShortInput"
               type="text"
               class="input mt-1"
               placeholder="#FFF"
-              @input="updateFromHexShort"
+              @input="handleHexShortInput"
+              @blur="validateHexShortInput"
             />
           </div>
           <div class="text-xs text-muted-foreground">
@@ -468,6 +470,10 @@ import {
 const currentColor = ref('#3B82F6')
 const colorPickerRef = ref<HTMLInputElement>()
 
+// 输入框的值（允许不完整输入）
+const hexInput = ref('#3B82F6')
+const hexShortInput = ref('#3BF')
+
 // RGB 值
 const rgb = ref({ r: 59, g: 130, b: 246 })
 
@@ -508,35 +514,18 @@ const cssColorNames: Record<string, string> = {
 }
 
 // 计算属性
-const hexColor = computed({
-  get: () => currentColor.value.toUpperCase(),
-  set: (value: string) => {
-    if (/^#[0-9A-F]{6}$/i.test(value)) {
-      currentColor.value = value
-      updateFromHex()
-    }
-  }
-})
+const hexColor = computed(() => currentColor.value.toUpperCase())
 
-const hexShort = computed({
-  get: () => {
-    const hex = currentColor.value.slice(1)
-    const r = hex.slice(0, 2)
-    const g = hex.slice(2, 4)
-    const b = hex.slice(4, 6)
-    
-    if (r[0] === r[1] && g[0] === g[1] && b[0] === b[1]) {
-      return `#${r[0]}${g[0]}${b[0]}`.toUpperCase()
-    }
-    return hexColor.value
-  },
-  set: (value: string) => {
-    if (/^#[0-9A-F]{3}$/i.test(value)) {
-      const expanded = value.slice(1).split('').map(c => c + c).join('')
-      currentColor.value = `#${expanded}`
-      updateFromHex()
-    }
+const hexShort = computed(() => {
+  const hex = currentColor.value.slice(1)
+  const r = hex.slice(0, 2)
+  const g = hex.slice(2, 4)
+  const b = hex.slice(4, 6)
+  
+  if (r[0] === r[1] && g[0] === g[1] && b[0] === b[1]) {
+    return `#${r[0]}${g[0]}${b[0]}`.toUpperCase()
   }
+  return currentColor.value.toUpperCase()
 })
 
 const rgbString = computed(() => `rgb(${rgb.value.r}, ${rgb.value.g}, ${rgb.value.b})`)
@@ -747,6 +736,9 @@ const updateColor = () => {
   rgb.value = newRgb
   hsl.value = rgbToHsl(newRgb.r, newRgb.g, newRgb.b)
   hsv.value = rgbToHsv(newRgb.r, newRgb.g, newRgb.b)
+  // 同步输入框的值
+  hexInput.value = currentColor.value.toUpperCase()
+  hexShortInput.value = hexShort.value
 }
 
 const updateFromHex = () => {
@@ -757,10 +749,81 @@ const updateFromHexShort = () => {
   updateColor()
 }
 
+// HEX输入处理
+const handleHexInput = () => {
+  // 实时验证并更新（只在输入有效时）
+  const value = hexInput.value.trim().toUpperCase()
+  if (/^#[0-9A-F]{6}$/i.test(value)) {
+    currentColor.value = value
+    updateColor()
+  }
+}
+
+const validateHexInput = () => {
+  // 失焦时验证并修正
+  let value = hexInput.value.trim().toUpperCase()
+  
+  // 自动添加#号
+  if (!value.startsWith('#') && value.length > 0) {
+    value = '#' + value
+  }
+  
+  // 验证并修正格式
+  if (/^#[0-9A-F]{6}$/i.test(value)) {
+    currentColor.value = value
+    hexInput.value = value
+    updateColor()
+  } else if (/^#[0-9A-F]{3}$/i.test(value)) {
+    // 如果是3位，扩展为6位
+    const expanded = value.slice(1).split('').map(c => c + c).join('')
+    const fullHex = `#${expanded}`
+    currentColor.value = fullHex
+    hexInput.value = fullHex
+    updateColor()
+  } else {
+    // 无效输入，恢复到当前颜色
+    hexInput.value = currentColor.value.toUpperCase()
+  }
+}
+
+const handleHexShortInput = () => {
+  // 实时验证并更新（只在输入有效时）
+  const value = hexShortInput.value.trim().toUpperCase()
+  if (/^#[0-9A-F]{3}$/i.test(value)) {
+    const expanded = value.slice(1).split('').map(c => c + c).join('')
+    currentColor.value = `#${expanded}`
+    updateColor()
+  }
+}
+
+const validateHexShortInput = () => {
+  // 失焦时验证并修正
+  let value = hexShortInput.value.trim().toUpperCase()
+  
+  // 自动添加#号
+  if (!value.startsWith('#') && value.length > 0) {
+    value = '#' + value
+  }
+  
+  // 验证并修正格式
+  if (/^#[0-9A-F]{3}$/i.test(value)) {
+    const expanded = value.slice(1).split('').map(c => c + c).join('')
+    currentColor.value = `#${expanded}`
+    hexShortInput.value = value
+    updateColor()
+  } else {
+    // 无效输入，恢复到当前颜色的短格式
+    hexShortInput.value = hexShort.value
+  }
+}
+
 const updateFromRgb = () => {
   currentColor.value = rgbToHex(rgb.value.r, rgb.value.g, rgb.value.b)
   hsl.value = rgbToHsl(rgb.value.r, rgb.value.g, rgb.value.b)
   hsv.value = rgbToHsv(rgb.value.r, rgb.value.g, rgb.value.b)
+  // 同步输入框的值
+  hexInput.value = currentColor.value.toUpperCase()
+  hexShortInput.value = hexShort.value
 }
 
 const updateFromHsl = () => {
@@ -768,6 +831,9 @@ const updateFromHsl = () => {
   rgb.value = newRgb
   currentColor.value = rgbToHex(newRgb.r, newRgb.g, newRgb.b)
   hsv.value = rgbToHsv(newRgb.r, newRgb.g, newRgb.b)
+  // 同步输入框的值
+  hexInput.value = currentColor.value.toUpperCase()
+  hexShortInput.value = hexShort.value
 }
 
 const updateFromHsv = () => {
@@ -775,6 +841,9 @@ const updateFromHsv = () => {
   rgb.value = newRgb
   currentColor.value = rgbToHex(newRgb.r, newRgb.g, newRgb.b)
   hsl.value = rgbToHsl(newRgb.r, newRgb.g, newRgb.b)
+  // 同步输入框的值
+  hexInput.value = currentColor.value.toUpperCase()
+  hexShortInput.value = hexShort.value
 }
 
 const openColorPicker = () => {

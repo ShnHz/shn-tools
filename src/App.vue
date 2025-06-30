@@ -18,7 +18,7 @@
             </div>
             <div class="hidden sm:block">
               <h1 class="text-xl font-bold text-gradient">SHN工具箱</h1>
-              <p class="text-xs text-muted-foreground">100+ 开发工具集合</p>
+              <p class="text-xs text-muted-foreground">100+ 工具集合</p>
             </div>
           </router-link>
 

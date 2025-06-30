@@ -12,7 +12,7 @@
         
         <div>
           <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            为每个辛勤工作的“牛马们”打造的实用工具集合
+            为每个人打造的实用工具集合
           </p>
         </div>
       </div>
@@ -198,7 +198,7 @@ import {
 } from 'lucide-vue-next'
 import * as LucideIcons from 'lucide-vue-next'
 import { tools, categories, getFeaturedTools, searchTools } from '@/data/tools'
-import type { ToolCategory } from '@/types/tools'
+import type { ToolCategory, ToolInfo } from '@/types/tools'
 import ToolCard from '@/components/ToolCard.vue'
 
 const router = useRouter()
@@ -211,6 +211,18 @@ const selectedCategory = ref<ToolCategory | null>(null)
  */
 const searchSuggestions = ref([
   'JSON', '颜色', 'Base64', '时间戳', '二维码', 'UUID'
+])
+
+/**
+ * 常用工具ID列表（可以自定义顺序和内容）
+ */
+const commonToolIds = ref([
+  'json-pretty',      // JSON格式化
+  'color-picker',     // 颜色选择器
+  'base64-encode',    // Base64编码
+  'word-count',       // 字数统计
+  'hex-rgb',          // HEX↔RGB转换
+  'diff-viewer'       // 文本对比
 ])
 
 /**
@@ -247,9 +259,13 @@ const navigateToTool = (toolId: string) => {
 }
 
 /**
- * 常用工具列表（6个）
+ * 常用工具列表（根据ID数组获取）
  */
-const commonTools = computed(() => getFeaturedTools().slice(0, 6))
+const commonTools = computed(() => {
+  return commonToolIds.value
+    .map(id => tools.find(tool => tool.id === id))
+    .filter((tool): tool is ToolInfo => tool !== undefined) // 过滤掉未找到的工具
+})
 
 /**
  * 过滤后的工具列表
