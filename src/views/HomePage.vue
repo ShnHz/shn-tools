@@ -255,12 +255,13 @@
   /**
    * 常用工具ID列表（可以自定义顺序和内容）
    */
-  const commonToolIds = ref([
-    'hex-rgb', // 颜色转换
-    'word-count', // 字数统计
-    'diff-viewer', // 文本对比
-    'unix-timestamp',   // 时间戳转换
-  ])
+      const commonToolIds = ref([
+      'hex-rgb', // 颜色转换
+      'word-count', // 字数统计
+      'diff-viewer', // 文本对比
+      'unix-timestamp',   // 时间戳转换
+      'git-commit-stats', // Git提交统计
+    ])
 
   /**
    * 获取分类图标组件
@@ -334,9 +335,9 @@
    */
   const selectCategory = (categoryId: ToolCategory | null) => {
     selectedCategory.value = categoryId
-    // 更新URL查询参数
-    const query = categoryId ? { category: categoryId } : {}
-    router.replace({ query })
+    // // 更新URL查询参数
+    // const query = categoryId ? { category: categoryId } : {}
+    // router.replace({ query })
   }
 
   /**

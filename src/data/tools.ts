@@ -594,6 +594,16 @@ export const tools: ToolInfo[] = [
     icon: 'GitCompare',
     tags: ['JSON', '对比', '差异'],
   },
+  {
+    id: 'git-commit-stats',
+    name: 'Git提交统计',
+    description: '扫描Git项目提取提交记录并可视化展示',
+    category: 'web',
+    icon: 'GitBranch',
+    featured: true,
+    tags: ['Git', '提交', '统计', '可视化'],
+    implemented: true,
+  },
 
   // 随机生成 (61-70)
   {
