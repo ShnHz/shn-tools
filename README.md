@@ -1,5 +1,7 @@
 # SHN工具箱 - 100个实用小工具
 
+此工具完全基于cursor ai自动开发，并使用github action自动部署到github pages
+
 一个基于 Vue 3 + TypeScript + TailwindCSS 构建的纯前端工具集合，包含100个实用的开发和日常使用工具。
 
 ## 🚀 特性
