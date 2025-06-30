@@ -12,9 +12,20 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    sourcemap: true,
+    sourcemap: false, // 生产环境不需要sourcemap以减少包大小
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue', 'vue-router', 'pinia'],
+        },
+      },
+    },
   },
   optimizeDeps: {
     include: ['vue', 'vue-router', 'pinia'],
+  },
+  preview: {
+    port: parseInt(process.env.PORT || '3000'),
+    host: '0.0.0.0',
   },
 }) 

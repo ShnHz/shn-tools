@@ -45,7 +45,7 @@
 
             <!-- GitHub 链接 -->
             <a
-              href="https://github.com"
+              href="https://github.com/ShnHz/shn-tools"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center h-10 w-10 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring relative overflow-hidden group"
