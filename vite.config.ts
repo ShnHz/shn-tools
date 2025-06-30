@@ -5,6 +5,7 @@ import { resolve } from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  base: '/', // GitHub Pages自定义域名使用根路径
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
@@ -23,9 +24,5 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['vue', 'vue-router', 'pinia'],
-  },
-  preview: {
-    port: parseInt(process.env.PORT || '3000'),
-    host: '0.0.0.0',
   },
 }) 
