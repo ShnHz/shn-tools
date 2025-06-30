@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 现代化配色系统 */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    /* 主色调 - 现代紫蓝色 */
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* 次要色调 */
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    
+    /* 静音色调 */
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    
+    /* 强调色 */
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    
+    /* 边框和输入 */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83% 58%;
+    
+    /* 破坏性操作 */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* 圆角系统 */
+    --radius: 0.75rem;
+    
+    /* 现代化渐变 */
+    --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+    --gradient-secondary: linear-gradient(135deg, #f472b6 0%, #fb7185 100%);
+    --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    --gradient-warm: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    --gradient-purple: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
+    
+    /* 阴影系统 */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    --shadow-glow: 0 0 20px rgb(139 92 246 / 0.3);
+    --shadow-colored: 0 8px 32px rgb(139 92 246 / 0.2);
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+    
+    /* 深色模式阴影 */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+    --shadow-glow: 0 0 20px rgb(139 92 246 / 0.4);
+    --shadow-colored: 0 8px 32px rgb(139 92 246 / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-variation-settings: normal;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* 按钮组件 */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply relative overflow-hidden;
+    @apply px-6 py-3;
+  }
+  
+  .btn::before {
+    content: '';
+    @apply absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500;
+  }
+  
+  .btn:hover::before {
+    @apply translate-x-[100%];
+  }
+  
+  .btn-primary {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground shadow-lg;
+    box-shadow: var(--shadow-colored);
+  }
+  
+  .btn-primary:hover {
+    @apply -translate-y-0.5 shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground border border-border shadow-sm;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-accent -translate-y-0.5 shadow-md;
+  }
+  
+  .btn-ghost {
+    @apply text-muted-foreground hover:bg-accent hover:text-accent-foreground;
+  }
+  
+  /* 卡片组件 */
+  .card {
+    @apply rounded-2xl border bg-card text-card-foreground shadow-sm;
+    @apply transition-all duration-300 ease-out;
+    @apply backdrop-blur-sm;
+  }
+  
+  .card:hover {
+    @apply shadow-lg -translate-y-1;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .card-featured {
+    @apply border-primary/20 bg-gradient-to-br from-card to-accent/30;
+    box-shadow: var(--shadow-colored);
+  }
+  
+  .card-featured:hover {
+    @apply shadow-xl -translate-y-2;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* 输入组件 */
+  .input {
+    @apply flex h-12 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm ring-offset-background;
+    @apply file:border-0 file:bg-transparent file:text-sm file:font-medium;
+    @apply placeholder:text-muted-foreground;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    @apply disabled:cursor-not-allowed disabled:opacity-50;
+    @apply transition-all duration-200;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .input:focus {
+    box-shadow: var(--shadow-md), 0 0 0 3px hsl(var(--ring) / 0.1);
+  }
+  
+  .textarea {
+    @apply flex min-h-[120px] w-full rounded-xl border border-input bg-background px-4 py-3 text-sm ring-offset-background;
+    @apply placeholder:text-muted-foreground;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    @apply disabled:cursor-not-allowed disabled:opacity-50;
+    @apply transition-all duration-200;
+    @apply resize-none;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .textarea:focus {
+    box-shadow: var(--shadow-md), 0 0 0 3px hsl(var(--ring) / 0.1);
+  }
+  
+  /* 标签组件 */
+  .tag {
+    @apply inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-medium;
+    @apply bg-secondary text-secondary-foreground;
+    @apply transition-colors duration-200;
+  }
+  
+  .tag-primary {
+    @apply bg-primary/10 text-primary border border-primary/20;
+  }
+  
+  .tag-success {
+    @apply bg-green-100 text-green-700 border border-green-200;
+  }
+  
+  .tag-warning {
+    @apply bg-yellow-100 text-yellow-700 border border-yellow-200;
+  }
+  
+  .tag-danger {
+    @apply bg-red-100 text-red-700 border border-red-200;
+  }
+  
+  /* 头像组件 */
+  .avatar {
+    @apply relative inline-flex h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-background;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .avatar-large {
+    @apply h-16 w-16;
+  }
+  
+  /* 分隔符 */
+  .separator {
+    @apply shrink-0 bg-border;
+  }
+  
+  .separator-horizontal {
+    @apply h-[1px] w-full;
+  }
+  
+  .separator-vertical {
+    @apply h-full w-[1px];
+  }
+}
+
+/* Bento Grid 布局 - 现代化设计 */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  
+  /* 响应式断点 */
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.75rem;
+    padding: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  @media (min-width: 1536px) {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 3rem;
+  }
+}
+
+/* 特殊网格项目 */
+.bento-item-large {
+  grid-column: span 2;
+}
+
+.bento-item-tall {
+  grid-row: span 2;
+}
+
+.bento-item-wide {
+  @media (min-width: 768px) {
+    grid-column: span 2;
+  }
+}
+
+/* 渐变工具类 */
+.gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.gradient-secondary {
+  background: var(--gradient-secondary);
+}
+
+.gradient-accent {
+  background: var(--gradient-accent);
+}
+
+.gradient-warm {
+  background: var(--gradient-warm);
+}
+
+.gradient-success {
+  background: var(--gradient-success);
+}
+
+.gradient-purple {
+  background: var(--gradient-purple);
+}
+
+/* 阴影工具类 */
+.shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.shadow-colored {
+  box-shadow: var(--shadow-colored);
+}
+
+/* 玻璃态效果 */
+.glass {
+  @apply backdrop-blur-md;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 动画类 */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.6s ease-out;
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+  transition: background-color 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Firefox 滚动条 */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted-foreground) / 0.3) hsl(var(--muted));
+}
+
+/* 选择文本样式 */
+::selection {
+  @apply bg-primary/20 text-primary;
+}
+
+/* 焦点可见性 */
+.focus-visible {
+  @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+}
+
+/* 文本样式增强 */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 加载状态 */
+.skeleton {
+  @apply animate-pulse rounded bg-muted;
+}
+
+/* 分隔线样式 */
+.divider {
+  @apply relative;
+}
+
+.divider::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-border to-transparent;
+}
+
+/* 工具提示样式基础 */
+.tooltip {
+  @apply absolute z-50 px-3 py-1.5 text-xs bg-popover text-popover-foreground border rounded-lg shadow-lg;
+  @apply animate-fade-in;
+} 
