@@ -119,36 +119,36 @@
             </h4>
             <ul class="space-y-2 text-sm">
               <li>
-                <a
-                  href="#"
-                  class="text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-2"
+                <button
+                  @click="navigateToCategory('text')"
+                  class="text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-2 cursor-pointer"
                 >
                   <span class="text-xs">🔤</span> 文本处理
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-2"
+                <button
+                  @click="navigateToCategory('color')"
+                  class="text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-2 cursor-pointer"
                 >
                   <span class="text-xs">🎨</span> 颜色设计
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-2"
+                <button
+                  @click="navigateToCategory('encode')"
+                  class="text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-2 cursor-pointer"
                 >
                   <span class="text-xs">🔐</span> 编码加密
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-2"
+                <button
+                  @click="navigateToCategory('data')"
+                  class="text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-2 cursor-pointer"
                 >
                   <span class="text-xs">📊</span> 数据处理
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -163,31 +163,31 @@
             </h4>
             <ul class="space-y-2 text-sm">
               <li>
-                <a
-                  href="#"
-                  class="text-muted-foreground hover:text-primary transition-colors duration-200"
-                  >JSON 格式化</a
+                <button
+                  @click="navigateToTool('json-pretty')"
+                  class="text-muted-foreground hover:text-primary transition-colors duration-200 cursor-pointer"
+                  >JSON 格式化</button
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-muted-foreground hover:text-primary transition-colors duration-200"
-                  >Base64 编码</a
+                <button
+                  @click="navigateToTool('base64-encode')"
+                  class="text-muted-foreground hover:text-primary transition-colors duration-200 cursor-pointer"
+                  >Base64 编码</button
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-muted-foreground hover:text-primary transition-colors duration-200"
-                  >颜色选择器</a
+                <button
+                  @click="navigateToTool('color-picker')"
+                  class="text-muted-foreground hover:text-primary transition-colors duration-200 cursor-pointer"
+                  >颜色选择器</button
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-muted-foreground hover:text-primary transition-colors duration-200"
-                  >二维码生成</a
+                <button
+                  @click="navigateToTool('qr-generator')"
+                  class="text-muted-foreground hover:text-primary transition-colors duration-200 cursor-pointer"
+                  >二维码生成</button
                 >
               </li>
             </ul>
@@ -204,28 +204,24 @@
             <ul class="space-y-2 text-sm">
               <li>
                 <a
-                  href="#"
-                  class="text-muted-foreground hover:text-primary transition-colors duration-200"
-                  >使用指南</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
+                  target="_blank"
+                  href="https://github.com/ShnHz/shn-tools/issues"
                   class="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >常见问题</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
+                  target="_blank"
+                  href="https://github.com/ShnHz/shn-tools/issues"
                   class="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >意见反馈</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
+                  target="_blank"
+                  href="https://github.com/ShnHz/shn-tools"
                   class="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >开源贡献</a
                 >
@@ -267,6 +263,24 @@
 
   const router = useRouter()
   const isDark = ref(false)
+
+  /**
+   * 导航到特定分类
+   */
+  const navigateToCategory = (categoryId: string) => {
+    // 如果当前不在首页，先跳转到首页，然后传递分类参数
+    router.push({
+      path: '/',
+      query: { category: categoryId }
+    })
+  }
+
+  /**
+   * 导航到特定工具
+   */
+  const navigateToTool = (toolId: string) => {
+    router.push(`/tool/${toolId}`)
+  }
 
   /**
    * 切换主题模式

@@ -12,7 +12,7 @@
         
         <div>
           <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            为开发者精心打造的实用工具集合
+            为每个辛勤工作的“牛马们”打造的实用工具集合
           </p>
         </div>
       </div>
@@ -93,10 +93,10 @@
     </div>
 
     <!-- 分类过滤 -->
-    <div>
+    <div id="categories-section">
       <div class="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
         <button
-          @click="selectedCategory = null"
+          @click="selectCategory(null)"
           :class="[
             'px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 relative overflow-hidden group',
             selectedCategory === null 
@@ -114,7 +114,7 @@
         <button
           v-for="category in categories"
           :key="category.id"
-          @click="selectedCategory = category.id"
+          @click="selectCategory(category.id)"
           :class="[
             'px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 relative overflow-hidden group',
             selectedCategory === category.id
@@ -189,8 +189,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, computed, onMounted, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { 
   Search, 
   X, 
@@ -202,6 +202,7 @@ import type { ToolCategory } from '@/types/tools'
 import ToolCard from '@/components/ToolCard.vue'
 
 const router = useRouter()
+const route = useRoute()
 const searchQuery = ref('')
 const selectedCategory = ref<ToolCategory | null>(null)
 
@@ -274,10 +275,61 @@ const filteredTools = computed(() => {
 
   return result
 })
+
+/**
+ * 选择分类
+ */
+const selectCategory = (categoryId: ToolCategory | null) => {
+  selectedCategory.value = categoryId
+  // 更新URL查询参数
+  const query = categoryId ? { category: categoryId } : {}
+  router.replace({ query })
+}
+
+/**
+ * 滚动到分类区域
+ */
+const scrollToCategories = () => {
+  const element = document.getElementById('categories-section')
+  if (element) {
+    element.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'start' 
+    })
+  }
+}
+
+/**
+ * 处理路由查询参数中的分类
+ */
+const handleCategoryFromQuery = () => {
+  const categoryParam = route.query.category as string
+  if (categoryParam && categories.some(cat => cat.id === categoryParam)) {
+    selectedCategory.value = categoryParam as ToolCategory
+    // 延迟滚动，确保DOM已更新
+    setTimeout(() => {
+      scrollToCategories()
+    }, 100)
+  }
+}
+
+// 监听路由变化
+watch(() => route.query.category, () => {
+  handleCategoryFromQuery()
+})
+
+// 组件挂载时检查查询参数
+onMounted(() => {
+  handleCategoryFromQuery()
+})
 </script>
 
 <style scoped>
 .tool-card-anchor {
   scroll-margin-top: 100px; /* 为锚点定位留出顶部空间 */
+}
+
+#categories-section {
+  scroll-margin-top: 80px; /* 为分类区域滚动留出顶部空间 */
 }
 </style> 
