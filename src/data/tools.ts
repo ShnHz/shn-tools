@@ -9,71 +9,71 @@ export const categories: CategoryInfo[] = [
     name: '文本处理',
     description: '文本编辑、格式转换、正则匹配等',
     icon: 'FileText',
-    color: 'bg-blue-500'
+    color: 'bg-blue-500',
   },
   {
     id: 'color',
     name: '颜色设计',
     description: '颜色选择、格式转换、配色方案等',
     icon: 'Palette',
-    color: 'bg-purple-500'
+    color: 'bg-purple-500',
   },
   {
     id: 'image',
     name: '图片处理',
     description: '图片压缩、格式转换、编辑等',
     icon: 'Image',
-    color: 'bg-green-500'
+    color: 'bg-green-500',
   },
   {
     id: 'datetime',
     name: '日期时间',
     description: '时间戳转换、日期计算、倒计时等',
     icon: 'Clock',
-    color: 'bg-orange-500'
+    color: 'bg-orange-500',
   },
   {
     id: 'math',
     name: '数学计算',
     description: '单位转换、数学运算、进制转换等',
     icon: 'Calculator',
-    color: 'bg-red-500'
+    color: 'bg-red-500',
   },
   {
     id: 'encode',
     name: '编码加密',
     description: 'Base64、哈希、UUID、密码等',
     icon: 'Lock',
-    color: 'bg-indigo-500'
+    color: 'bg-indigo-500',
   },
   {
     id: 'web',
     name: 'Web开发',
     description: 'JSON处理、HTTP状态、正则等',
     icon: 'Code',
-    color: 'bg-cyan-500'
+    color: 'bg-cyan-500',
   },
   {
     id: 'random',
     name: '随机生成',
     description: '随机数、密码、名字、颜色等',
     icon: 'Shuffle',
-    color: 'bg-pink-500'
+    color: 'bg-pink-500',
   },
   {
     id: 'file',
     name: '文件处理',
     description: 'CSV、PDF、ZIP、Excel等格式处理',
     icon: 'FolderOpen',
-    color: 'bg-yellow-500'
+    color: 'bg-yellow-500',
   },
   {
     id: 'data',
     name: '数据可视化',
     description: '图表生成、数据预览、格式转换等',
     icon: 'BarChart',
-    color: 'bg-teal-500'
-  }
+    color: 'bg-teal-500',
+  },
 ]
 
 /**
@@ -89,7 +89,7 @@ export const tools: ToolInfo[] = [
     icon: 'Hash',
     featured: true,
     tags: ['文本', '统计', '字数'],
-    implemented: true
+    implemented: true,
   },
   {
     id: 'char-case',
@@ -97,7 +97,7 @@ export const tools: ToolInfo[] = [
     description: '文本大小写、驼峰命名等格式转换',
     category: 'text',
     icon: 'Type',
-    tags: ['文本', '转换', '格式']
+    tags: ['文本', '转换', '格式'],
   },
   {
     id: 'slugify',
@@ -105,7 +105,7 @@ export const tools: ToolInfo[] = [
     description: '将文本转换为URL友好的slug格式',
     category: 'text',
     icon: 'Link',
-    tags: ['URL', 'slug', 'SEO']
+    tags: ['URL', 'slug', 'SEO'],
   },
   {
     id: 'lorem-ipsum',
@@ -113,7 +113,7 @@ export const tools: ToolInfo[] = [
     description: '生成Lorem Ipsum占位文本',
     category: 'text',
     icon: 'FileText',
-    tags: ['占位符', '假文', '测试']
+    tags: ['占位符', '假文', '测试'],
   },
   {
     id: 'markdown-preview',
@@ -122,7 +122,7 @@ export const tools: ToolInfo[] = [
     category: 'text',
     icon: 'Eye',
     featured: true,
-    tags: ['Markdown', 'HTML', '预览']
+    tags: ['Markdown', 'HTML', '预览'],
   },
   {
     id: 'json-pretty',
@@ -132,7 +132,7 @@ export const tools: ToolInfo[] = [
     icon: 'Braces',
     featured: true,
     tags: ['JSON', '格式化', '验证'],
-    implemented: true
+    implemented: true,
   },
   {
     id: 'yaml-to-json',
@@ -140,7 +140,7 @@ export const tools: ToolInfo[] = [
     description: 'YAML与JSON格式互相转换',
     category: 'text',
     icon: 'RefreshCw',
-    tags: ['YAML', 'JSON', '转换']
+    tags: ['YAML', 'JSON', '转换'],
   },
   {
     id: 'html-to-text',
@@ -148,7 +148,7 @@ export const tools: ToolInfo[] = [
     description: '提取HTML中的纯文本内容',
     category: 'text',
     icon: 'FileCode',
-    tags: ['HTML', '文本', '提取']
+    tags: ['HTML', '文本', '提取'],
   },
   {
     id: 'regex-tester',
@@ -157,7 +157,7 @@ export const tools: ToolInfo[] = [
     category: 'text',
     icon: 'Search',
     featured: true,
-    tags: ['正则', '匹配', '测试']
+    tags: ['正则', '匹配', '测试'],
   },
   {
     id: 'diff-viewer',
@@ -166,7 +166,7 @@ export const tools: ToolInfo[] = [
     category: 'text',
     icon: 'GitCompare',
     tags: ['对比', '差异', '文本'],
-    implemented: true
+    implemented: true,
   },
 
   // 颜色设计 (11-20)
@@ -178,16 +178,16 @@ export const tools: ToolInfo[] = [
     icon: 'Pipette',
     featured: true,
     tags: ['颜色', '选择器', 'HEX'],
-    implemented: true
+    implemented: true,
   },
   {
     id: 'hex-rgb',
-    name: 'HEX↔RGB',
-    description: 'HEX与RGB颜色格式互转',
+    name: '颜色转换',
+    description: '多种颜色格式互转',
     category: 'color',
     icon: 'Palette',
     tags: ['HEX', 'RGB', '转换'],
-    implemented: true
+    implemented: true,
   },
   {
     id: 'palette-generator',
@@ -196,7 +196,7 @@ export const tools: ToolInfo[] = [
     category: 'color',
     icon: 'SwatchBook',
     tags: ['调色板', '配色', '生成'],
-    implemented: true
+    implemented: true,
   },
   {
     id: 'contrast-checker',
@@ -205,7 +205,7 @@ export const tools: ToolInfo[] = [
     category: 'color',
     icon: 'Eye',
     tags: ['对比度', '无障碍', '检测'],
-    implemented: true
+    implemented: true,
   },
   {
     id: 'gradient-maker',
@@ -214,7 +214,7 @@ export const tools: ToolInfo[] = [
     category: 'color',
     icon: 'Zap',
     featured: true,
-    tags: ['渐变', 'CSS', '生成']
+    tags: ['渐变', 'CSS', '生成'],
   },
   {
     id: 'shadow-generator',
@@ -222,7 +222,7 @@ export const tools: ToolInfo[] = [
     description: '生成CSS盒阴影代码',
     category: 'color',
     icon: 'Square',
-    tags: ['阴影', 'CSS', 'box-shadow']
+    tags: ['阴影', 'CSS', 'box-shadow'],
   },
   {
     id: 'border-radius',
@@ -230,7 +230,7 @@ export const tools: ToolInfo[] = [
     description: '可视化调整CSS圆角效果',
     category: 'color',
     icon: 'Square',
-    tags: ['圆角', 'CSS', '预览']
+    tags: ['圆角', 'CSS', '预览'],
   },
   {
     id: 'favicon-generator',
@@ -238,7 +238,7 @@ export const tools: ToolInfo[] = [
     description: '生成多尺寸网站图标',
     category: 'color',
     icon: 'Star',
-    tags: ['favicon', '图标', '网站']
+    tags: ['favicon', '图标', '网站'],
   },
   {
     id: 'css-clamp',
@@ -246,7 +246,7 @@ export const tools: ToolInfo[] = [
     description: '计算响应式字体大小',
     category: 'color',
     icon: 'Ruler',
-    tags: ['CSS', 'clamp', '响应式']
+    tags: ['CSS', 'clamp', '响应式'],
   },
   {
     id: 'tailwind-cheatsheet',
@@ -254,7 +254,7 @@ export const tools: ToolInfo[] = [
     description: 'Tailwind CSS类名快速查找',
     category: 'color',
     icon: 'BookOpen',
-    tags: ['Tailwind', 'CSS', '速查']
+    tags: ['Tailwind', 'CSS', '速查'],
   },
 
   // 编码加密 (21-30)
@@ -266,7 +266,7 @@ export const tools: ToolInfo[] = [
     icon: 'Code',
     featured: true,
     tags: ['Base64', '编码', '解码'],
-    implemented: true
+    implemented: true,
   },
   {
     id: 'url-encode',
@@ -274,7 +274,7 @@ export const tools: ToolInfo[] = [
     description: 'URL编码解码工具',
     category: 'encode',
     icon: 'Link',
-    tags: ['URL', '编码', '解码']
+    tags: ['URL', '编码', '解码'],
   },
   {
     id: 'jwt-decode',
@@ -283,7 +283,7 @@ export const tools: ToolInfo[] = [
     category: 'encode',
     icon: 'Key',
     featured: true,
-    tags: ['JWT', 'Token', '解析']
+    tags: ['JWT', 'Token', '解析'],
   },
   {
     id: 'md5-hash',
@@ -291,7 +291,7 @@ export const tools: ToolInfo[] = [
     description: '计算文本MD5哈希值',
     category: 'encode',
     icon: 'Hash',
-    tags: ['MD5', '哈希', '加密']
+    tags: ['MD5', '哈希', '加密'],
   },
   {
     id: 'sha256-hash',
@@ -299,7 +299,7 @@ export const tools: ToolInfo[] = [
     description: '计算文本SHA256哈希值',
     category: 'encode',
     icon: 'Shield',
-    tags: ['SHA256', '哈希', '加密']
+    tags: ['SHA256', '哈希', '加密'],
   },
   {
     id: 'uuid-generator',
@@ -308,7 +308,7 @@ export const tools: ToolInfo[] = [
     category: 'encode',
     icon: 'Fingerprint',
     featured: true,
-    tags: ['UUID', '唯一标识', '生成']
+    tags: ['UUID', '唯一标识', '生成'],
   },
   {
     id: 'bcrypt-hash',
@@ -316,7 +316,7 @@ export const tools: ToolInfo[] = [
     description: '生成Bcrypt密码哈希',
     category: 'encode',
     icon: 'Lock',
-    tags: ['Bcrypt', '密码', '哈希']
+    tags: ['Bcrypt', '密码', '哈希'],
   },
   {
     id: 'qr-generator',
@@ -325,7 +325,7 @@ export const tools: ToolInfo[] = [
     category: 'encode',
     icon: 'QrCode',
     featured: true,
-    tags: ['二维码', 'QR', '生成']
+    tags: ['二维码', 'QR', '生成'],
   },
   {
     id: 'barcode-generator',
@@ -333,7 +333,7 @@ export const tools: ToolInfo[] = [
     description: '生成条形码',
     category: 'encode',
     icon: 'BarChart',
-    tags: ['条形码', '生成', '扫描']
+    tags: ['条形码', '生成', '扫描'],
   },
   {
     id: 'password-strength',
@@ -341,7 +341,7 @@ export const tools: ToolInfo[] = [
     description: '检测密码强度等级',
     category: 'encode',
     icon: 'ShieldCheck',
-    tags: ['密码', '强度', '安全']
+    tags: ['密码', '强度', '安全'],
   },
 
   // 数学计算 (31-40)
@@ -352,7 +352,7 @@ export const tools: ToolInfo[] = [
     category: 'math',
     icon: 'Ruler',
     featured: true,
-    tags: ['单位', '转换', '度量']
+    tags: ['单位', '转换', '度量'],
   },
   {
     id: 'percentage-calc',
@@ -360,7 +360,7 @@ export const tools: ToolInfo[] = [
     description: '百分比相关计算',
     category: 'math',
     icon: 'Percent',
-    tags: ['百分比', '计算', '比例']
+    tags: ['百分比', '计算', '比例'],
   },
   {
     id: 'triangle-solver',
@@ -368,7 +368,7 @@ export const tools: ToolInfo[] = [
     description: '根据边角求三角形其他属性',
     category: 'math',
     icon: 'Triangle',
-    tags: ['三角形', '几何', '计算']
+    tags: ['三角形', '几何', '计算'],
   },
   {
     id: 'prime-checker',
@@ -376,7 +376,7 @@ export const tools: ToolInfo[] = [
     description: '检测数字是否为质数',
     category: 'math',
     icon: 'Hash',
-    tags: ['质数', '数学', '检测']
+    tags: ['质数', '数学', '检测'],
   },
   {
     id: 'quadratic-solver',
@@ -384,7 +384,7 @@ export const tools: ToolInfo[] = [
     description: '解一元二次方程',
     category: 'math',
     icon: 'Calculator',
-    tags: ['方程', '数学', '求解']
+    tags: ['方程', '数学', '求解'],
   },
   {
     id: 'matrix-math',
@@ -392,7 +392,7 @@ export const tools: ToolInfo[] = [
     description: '矩阵加减乘除运算',
     category: 'math',
     icon: 'Grid',
-    tags: ['矩阵', '线性代数', '运算']
+    tags: ['矩阵', '线性代数', '运算'],
   },
   {
     id: 'currency-convert',
@@ -400,7 +400,7 @@ export const tools: ToolInfo[] = [
     description: '货币汇率转换计算',
     category: 'math',
     icon: 'DollarSign',
-    tags: ['汇率', '货币', '转换']
+    tags: ['汇率', '货币', '转换'],
   },
   {
     id: 'roman-numeral',
@@ -408,7 +408,7 @@ export const tools: ToolInfo[] = [
     description: '阿拉伯数字与罗马数字互转',
     category: 'math',
     icon: 'Type',
-    tags: ['罗马数字', '转换', '历史']
+    tags: ['罗马数字', '转换', '历史'],
   },
   {
     id: 'base-n',
@@ -417,7 +417,7 @@ export const tools: ToolInfo[] = [
     category: 'math',
     icon: 'Binary',
     featured: true,
-    tags: ['进制', '转换', '编程']
+    tags: ['进制', '转换', '编程'],
   },
   {
     id: 'random-number',
@@ -425,7 +425,7 @@ export const tools: ToolInfo[] = [
     description: '生成指定范围的随机数',
     category: 'math',
     icon: 'Dices',
-    tags: ['随机数', '生成', '范围']
+    tags: ['随机数', '生成', '范围'],
   },
 
   // 日期时间 (41-50)
@@ -436,7 +436,8 @@ export const tools: ToolInfo[] = [
     category: 'datetime',
     icon: 'Clock',
     featured: true,
-    tags: ['时间戳', '日期', '转换']
+    tags: ['时间戳', '日期', '转换'],
+    implemented: true
   },
   {
     id: 'cron-parser',
@@ -444,7 +445,7 @@ export const tools: ToolInfo[] = [
     description: '解析Cron表达式的执行时间',
     category: 'datetime',
     icon: 'Calendar',
-    tags: ['Cron', '定时任务', '解析']
+    tags: ['Cron', '定时任务', '解析'],
   },
   {
     id: 'age-calculator',
@@ -452,7 +453,7 @@ export const tools: ToolInfo[] = [
     description: '精确计算年龄和天数',
     category: 'datetime',
     icon: 'User',
-    tags: ['年龄', '计算', '生日']
+    tags: ['年龄', '计算', '生日'],
   },
   {
     id: 'time-diff',
@@ -460,7 +461,7 @@ export const tools: ToolInfo[] = [
     description: '计算两个日期之间的间隔',
     category: 'datetime',
     icon: 'Timer',
-    tags: ['时间', '间隔', '计算']
+    tags: ['时间', '间隔', '计算'],
   },
   {
     id: 'timezone-convert',
@@ -468,7 +469,7 @@ export const tools: ToolInfo[] = [
     description: '不同时区时间转换',
     category: 'datetime',
     icon: 'Globe',
-    tags: ['时区', '转换', '世界时间']
+    tags: ['时区', '转换', '世界时间'],
   },
   {
     id: 'week-number',
@@ -476,7 +477,7 @@ export const tools: ToolInfo[] = [
     description: '计算ISO周数',
     category: 'datetime',
     icon: 'Calendar',
-    tags: ['周数', 'ISO', '日历']
+    tags: ['周数', 'ISO', '日历'],
   },
   {
     id: 'countdown-timer',
@@ -484,7 +485,7 @@ export const tools: ToolInfo[] = [
     description: '可视化倒计时工具',
     category: 'datetime',
     icon: 'Timer',
-    tags: ['倒计时', '计时器', '提醒']
+    tags: ['倒计时', '计时器', '提醒'],
   },
   {
     id: 'date-add',
@@ -492,7 +493,7 @@ export const tools: ToolInfo[] = [
     description: '日期加减天数/月份/年份',
     category: 'datetime',
     icon: 'Plus',
-    tags: ['日期', '计算', '加减']
+    tags: ['日期', '计算', '加减'],
   },
   {
     id: 'working-days',
@@ -500,7 +501,7 @@ export const tools: ToolInfo[] = [
     description: '计算工作日天数',
     category: 'datetime',
     icon: 'Briefcase',
-    tags: ['工作日', '假期', '计算']
+    tags: ['工作日', '假期', '计算'],
   },
   {
     id: 'calendar-maker',
@@ -508,7 +509,7 @@ export const tools: ToolInfo[] = [
     description: '生成月历图片',
     category: 'datetime',
     icon: 'Calendar',
-    tags: ['日历', '生成', '图片']
+    tags: ['日历', '生成', '图片'],
   },
 
   // Web开发 (51-60)
@@ -519,7 +520,7 @@ export const tools: ToolInfo[] = [
     category: 'web',
     icon: 'FileCode',
     featured: true,
-    tags: ['JSON', 'TypeScript', '接口']
+    tags: ['JSON', 'TypeScript', '接口'],
   },
   {
     id: 'http-status',
@@ -527,7 +528,7 @@ export const tools: ToolInfo[] = [
     description: 'HTTP状态码查询工具',
     category: 'web',
     icon: 'Globe',
-    tags: ['HTTP', '状态码', '查询']
+    tags: ['HTTP', '状态码', '查询'],
   },
   {
     id: 'user-agent',
@@ -535,7 +536,7 @@ export const tools: ToolInfo[] = [
     description: '解析浏览器User-Agent信息',
     category: 'web',
     icon: 'Monitor',
-    tags: ['User-Agent', '浏览器', '解析']
+    tags: ['User-Agent', '浏览器', '解析'],
   },
   {
     id: 'mime-search',
@@ -543,7 +544,7 @@ export const tools: ToolInfo[] = [
     description: '查询文件MIME类型',
     category: 'web',
     icon: 'FileType',
-    tags: ['MIME', '文件类型', '查询']
+    tags: ['MIME', '文件类型', '查询'],
   },
   {
     id: 'dns-lookup',
@@ -551,7 +552,7 @@ export const tools: ToolInfo[] = [
     description: '域名DNS记录查询',
     category: 'web',
     icon: 'Search',
-    tags: ['DNS', '域名', '查询']
+    tags: ['DNS', '域名', '查询'],
   },
   {
     id: 'ip-info',
@@ -559,7 +560,7 @@ export const tools: ToolInfo[] = [
     description: '查询IP地址信息',
     category: 'web',
     icon: 'MapPin',
-    tags: ['IP', '地理位置', '查询']
+    tags: ['IP', '地理位置', '查询'],
   },
   {
     id: 'jwt-generator',
@@ -567,7 +568,7 @@ export const tools: ToolInfo[] = [
     description: '生成JWT Token',
     category: 'web',
     icon: 'Key',
-    tags: ['JWT', 'Token', '生成']
+    tags: ['JWT', 'Token', '生成'],
   },
   {
     id: 'uuid-namespace',
@@ -575,7 +576,7 @@ export const tools: ToolInfo[] = [
     description: '基于命名空间生成UUID v5',
     category: 'web',
     icon: 'Tag',
-    tags: ['UUID', '命名空间', '生成']
+    tags: ['UUID', '命名空间', '生成'],
   },
   {
     id: 'regex-cheatsheet',
@@ -583,7 +584,7 @@ export const tools: ToolInfo[] = [
     description: '常用正则表达式参考',
     category: 'web',
     icon: 'BookOpen',
-    tags: ['正则', '速查', '参考']
+    tags: ['正则', '速查', '参考'],
   },
   {
     id: 'json-diff',
@@ -591,7 +592,7 @@ export const tools: ToolInfo[] = [
     description: '比较两个JSON的差异',
     category: 'web',
     icon: 'GitCompare',
-    tags: ['JSON', '对比', '差异']
+    tags: ['JSON', '对比', '差异'],
   },
 
   // 随机生成 (61-70)
@@ -601,7 +602,7 @@ export const tools: ToolInfo[] = [
     description: '生成占位图片URL',
     category: 'random',
     icon: 'Image',
-    tags: ['占位图', '生成', '测试']
+    tags: ['占位图', '生成', '测试'],
   },
   {
     id: 'fake-user',
@@ -610,7 +611,7 @@ export const tools: ToolInfo[] = [
     category: 'random',
     icon: 'User',
     featured: true,
-    tags: ['虚拟用户', '测试数据', '生成']
+    tags: ['虚拟用户', '测试数据', '生成'],
   },
   {
     id: 'random-color',
@@ -618,7 +619,7 @@ export const tools: ToolInfo[] = [
     description: '生成随机颜色值',
     category: 'random',
     icon: 'Palette',
-    tags: ['随机', '颜色', '生成']
+    tags: ['随机', '颜色', '生成'],
   },
   {
     id: 'name-generator',
@@ -626,7 +627,7 @@ export const tools: ToolInfo[] = [
     description: '生成随机中英文姓名',
     category: 'random',
     icon: 'User',
-    tags: ['姓名', '随机', '生成']
+    tags: ['姓名', '随机', '生成'],
   },
   {
     id: 'quote-generator',
@@ -634,7 +635,7 @@ export const tools: ToolInfo[] = [
     description: '随机显示名人名言',
     category: 'random',
     icon: 'Quote',
-    tags: ['名言', '随机', '灵感']
+    tags: ['名言', '随机', '灵感'],
   },
   {
     id: 'password-generator',
@@ -643,7 +644,7 @@ export const tools: ToolInfo[] = [
     category: 'random',
     icon: 'Key',
     featured: true,
-    tags: ['密码', '安全', '生成']
+    tags: ['密码', '安全', '生成'],
   },
   {
     id: 'uuid-batch',
@@ -651,7 +652,7 @@ export const tools: ToolInfo[] = [
     description: '批量生成UUID',
     category: 'random',
     icon: 'List',
-    tags: ['UUID', '批量', '生成']
+    tags: ['UUID', '批量', '生成'],
   },
   {
     id: 'dice-roller',
@@ -659,7 +660,7 @@ export const tools: ToolInfo[] = [
     description: 'RPG骰子投掷器',
     category: 'random',
     icon: 'Dices',
-    tags: ['骰子', 'RPG', '游戏']
+    tags: ['骰子', 'RPG', '游戏'],
   },
   {
     id: 'lottery-picker',
@@ -667,7 +668,7 @@ export const tools: ToolInfo[] = [
     description: '随机抽奖工具',
     category: 'random',
     icon: 'Gift',
-    tags: ['抽奖', '随机', '选择']
+    tags: ['抽奖', '随机', '选择'],
   },
   {
     id: 'story-prompt',
@@ -675,7 +676,7 @@ export const tools: ToolInfo[] = [
     description: '生成写作提示和灵感',
     category: 'random',
     icon: 'PenTool',
-    tags: ['写作', '灵感', '创意']
+    tags: ['写作', '灵感', '创意'],
   },
 
   // 文件处理 (71-80)
@@ -686,7 +687,7 @@ export const tools: ToolInfo[] = [
     category: 'file',
     icon: 'FileSpreadsheet',
     featured: true,
-    tags: ['CSV', 'JSON', '转换']
+    tags: ['CSV', 'JSON', '转换'],
   },
   {
     id: 'json-to-csv',
@@ -694,7 +695,7 @@ export const tools: ToolInfo[] = [
     description: 'JSON数据转CSV文件',
     category: 'file',
     icon: 'Table',
-    tags: ['JSON', 'CSV', '转换']
+    tags: ['JSON', 'CSV', '转换'],
   },
   {
     id: 'markdown-toc',
@@ -702,7 +703,7 @@ export const tools: ToolInfo[] = [
     description: '生成Markdown文档目录',
     category: 'file',
     icon: 'List',
-    tags: ['Markdown', '目录', 'TOC']
+    tags: ['Markdown', '目录', 'TOC'],
   },
   {
     id: 'text-to-pdf',
@@ -710,7 +711,7 @@ export const tools: ToolInfo[] = [
     description: '将文本转换为PDF文件',
     category: 'file',
     icon: 'FileText',
-    tags: ['PDF', '文本', '转换']
+    tags: ['PDF', '文本', '转换'],
   },
   {
     id: 'merge-pdf',
@@ -718,7 +719,7 @@ export const tools: ToolInfo[] = [
     description: '合并多个PDF文件',
     category: 'file',
     icon: 'FilePlus',
-    tags: ['PDF', '合并', '文档']
+    tags: ['PDF', '合并', '文档'],
   },
   {
     id: 'split-pdf',
@@ -726,7 +727,7 @@ export const tools: ToolInfo[] = [
     description: '将PDF拆分为多个文件',
     category: 'file',
     icon: 'FileMinus',
-    tags: ['PDF', '分割', '文档']
+    tags: ['PDF', '分割', '文档'],
   },
   {
     id: 'excel-to-json',
@@ -734,7 +735,7 @@ export const tools: ToolInfo[] = [
     description: 'Excel文件转JSON数据',
     category: 'file',
     icon: 'FileSpreadsheet',
-    tags: ['Excel', 'JSON', '转换']
+    tags: ['Excel', 'JSON', '转换'],
   },
   {
     id: 'zip-extract',
@@ -742,7 +743,7 @@ export const tools: ToolInfo[] = [
     description: '在线解压ZIP文件',
     category: 'file',
     icon: 'Archive',
-    tags: ['ZIP', '解压', '压缩包']
+    tags: ['ZIP', '解压', '压缩包'],
   },
   {
     id: 'image-to-pdf',
@@ -750,7 +751,7 @@ export const tools: ToolInfo[] = [
     description: '将图片转换为PDF文档',
     category: 'file',
     icon: 'Image',
-    tags: ['图片', 'PDF', '转换']
+    tags: ['图片', 'PDF', '转换'],
   },
   {
     id: 'file-hash',
@@ -758,7 +759,7 @@ export const tools: ToolInfo[] = [
     description: '计算文件哈希校验值',
     category: 'file',
     icon: 'Shield',
-    tags: ['文件', '哈希', '校验']
+    tags: ['文件', '哈希', '校验'],
   },
 
   // 图片处理 (81-90)
@@ -769,7 +770,7 @@ export const tools: ToolInfo[] = [
     category: 'image',
     icon: 'Download',
     featured: true,
-    tags: ['图片', '压缩', '优化']
+    tags: ['图片', '压缩', '优化'],
   },
   {
     id: 'image-resize',
@@ -777,7 +778,7 @@ export const tools: ToolInfo[] = [
     description: '等比例缩放图片尺寸',
     category: 'image',
     icon: 'Maximize',
-    tags: ['图片', '缩放', '尺寸']
+    tags: ['图片', '缩放', '尺寸'],
   },
   {
     id: 'image-convert',
@@ -785,7 +786,7 @@ export const tools: ToolInfo[] = [
     description: 'PNG↔WebP↔JPG格式转换',
     category: 'image',
     icon: 'RefreshCw',
-    tags: ['图片', '转换', '格式']
+    tags: ['图片', '转换', '格式'],
   },
   {
     id: 'image-crop',
@@ -793,7 +794,7 @@ export const tools: ToolInfo[] = [
     description: '在线裁剪图片',
     category: 'image',
     icon: 'Crop',
-    tags: ['图片', '裁剪', '编辑']
+    tags: ['图片', '裁剪', '编辑'],
   },
   {
     id: 'exif-viewer',
@@ -801,7 +802,7 @@ export const tools: ToolInfo[] = [
     description: '查看和删除图片元数据',
     category: 'image',
     icon: 'Info',
-    tags: ['EXIF', '元数据', '隐私']
+    tags: ['EXIF', '元数据', '隐私'],
   },
   {
     id: 'svg-minify',
@@ -809,7 +810,7 @@ export const tools: ToolInfo[] = [
     description: '压缩SVG文件大小',
     category: 'image',
     icon: 'Minimize',
-    tags: ['SVG', '压缩', '优化']
+    tags: ['SVG', '压缩', '优化'],
   },
   {
     id: 'gif-split',
@@ -817,7 +818,7 @@ export const tools: ToolInfo[] = [
     description: '将GIF动图分离为单独帧',
     category: 'image',
     icon: 'Film',
-    tags: ['GIF', '动图', '分离']
+    tags: ['GIF', '动图', '分离'],
   },
   {
     id: 'video-trim',
@@ -825,7 +826,7 @@ export const tools: ToolInfo[] = [
     description: '在浏览器中剪辑视频片段',
     category: 'image',
     icon: 'Video',
-    tags: ['视频', '剪辑', '编辑']
+    tags: ['视频', '剪辑', '编辑'],
   },
   {
     id: 'audio-convert',
@@ -833,7 +834,7 @@ export const tools: ToolInfo[] = [
     description: '音频格式转换',
     category: 'image',
     icon: 'Music',
-    tags: ['音频', '转换', '格式']
+    tags: ['音频', '转换', '格式'],
   },
   {
     id: 'icon-spriter',
@@ -841,7 +842,7 @@ export const tools: ToolInfo[] = [
     description: '生成SVG雪碧图',
     category: 'image',
     icon: 'Grid',
-    tags: ['SVG', '雪碧图', '优化']
+    tags: ['SVG', '雪碧图', '优化'],
   },
 
   // 数据可视化 (91-100)
@@ -851,7 +852,7 @@ export const tools: ToolInfo[] = [
     description: '在线预览CSV文件内容',
     category: 'data',
     icon: 'Table',
-    tags: ['CSV', '预览', '表格']
+    tags: ['CSV', '预览', '表格'],
   },
   {
     id: 'json-plot',
@@ -860,7 +861,7 @@ export const tools: ToolInfo[] = [
     category: 'data',
     icon: 'BarChart',
     featured: true,
-    tags: ['JSON', '图表', '可视化']
+    tags: ['JSON', '图表', '可视化'],
   },
   {
     id: 'markdown-mermaid',
@@ -868,7 +869,7 @@ export const tools: ToolInfo[] = [
     description: 'Mermaid图表预览器',
     category: 'data',
     icon: 'Workflow',
-    tags: ['Mermaid', '流程图', '预览']
+    tags: ['Mermaid', '流程图', '预览'],
   },
   {
     id: 'geojson-viewer',
@@ -876,7 +877,7 @@ export const tools: ToolInfo[] = [
     description: 'GeoJSON地理数据查看器',
     category: 'data',
     icon: 'Map',
-    tags: ['GeoJSON', '地图', '地理']
+    tags: ['GeoJSON', '地图', '地理'],
   },
   {
     id: 'base64-image',
@@ -884,7 +885,7 @@ export const tools: ToolInfo[] = [
     description: 'Base64图片预览器',
     category: 'data',
     icon: 'Eye',
-    tags: ['Base64', '图片', '预览']
+    tags: ['Base64', '图片', '预览'],
   },
   {
     id: 'html-preview',
@@ -892,7 +893,7 @@ export const tools: ToolInfo[] = [
     description: '实时HTML代码预览',
     category: 'data',
     icon: 'Monitor',
-    tags: ['HTML', '预览', '实时']
+    tags: ['HTML', '预览', '实时'],
   },
   {
     id: 'table-sorter',
@@ -900,7 +901,7 @@ export const tools: ToolInfo[] = [
     description: '表格数据排序和筛选',
     category: 'data',
     icon: 'ArrowUpDown',
-    tags: ['表格', '排序', '筛选']
+    tags: ['表格', '排序', '筛选'],
   },
   {
     id: 'url-parser',
@@ -908,7 +909,7 @@ export const tools: ToolInfo[] = [
     description: '解析URL各个组成部分',
     category: 'data',
     icon: 'Link',
-    tags: ['URL', '解析', '组件']
+    tags: ['URL', '解析', '组件'],
   },
   {
     id: 'email-validator',
@@ -916,7 +917,7 @@ export const tools: ToolInfo[] = [
     description: '验证邮箱地址格式',
     category: 'data',
     icon: 'Mail',
-    tags: ['邮箱', '验证', '格式']
+    tags: ['邮箱', '验证', '格式'],
   },
   {
     id: 'credit-card-check',
@@ -924,29 +925,29 @@ export const tools: ToolInfo[] = [
     description: '银行卡号Luhn算法验证',
     category: 'data',
     icon: 'CreditCard',
-    tags: ['银行卡', 'Luhn', '验证']
-  }
+    tags: ['银行卡', 'Luhn', '验证'],
+  },
 ]
 
 /**
  * 根据ID获取工具信息
  */
 export function getToolById(id: string): ToolInfo | undefined {
-  return tools.find(tool => tool.id === id)
+  return tools.find((tool) => tool.id === id)
 }
 
 /**
  * 根据分类获取工具列表
  */
 export function getToolsByCategory(category: ToolCategory): ToolInfo[] {
-  return tools.filter(tool => tool.category === category)
+  return tools.filter((tool) => tool.category === category)
 }
 
 /**
  * 获取热门工具
  */
 export function getFeaturedTools(): ToolInfo[] {
-  return tools.filter(tool => tool.featured)
+  return tools.filter((tool) => tool.featured)
 }
 
 /**
@@ -954,9 +955,10 @@ export function getFeaturedTools(): ToolInfo[] {
  */
 export function searchTools(query: string): ToolInfo[] {
   const lowercaseQuery = query.toLowerCase()
-  return tools.filter(tool =>
-    tool.name.toLowerCase().includes(lowercaseQuery) ||
-    tool.description.toLowerCase().includes(lowercaseQuery) ||
-    tool.tags?.some(tag => tag.toLowerCase().includes(lowercaseQuery))
+  return tools.filter(
+    (tool) =>
+      tool.name.toLowerCase().includes(lowercaseQuery) ||
+      tool.description.toLowerCase().includes(lowercaseQuery) ||
+      tool.tags?.some((tag) => tag.toLowerCase().includes(lowercaseQuery))
   )
-} 
+}

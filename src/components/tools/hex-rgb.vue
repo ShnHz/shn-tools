@@ -7,9 +7,8 @@
     </div>
 
     <!-- 颜色选择器 -->
-    <div class="card p-6">
+    <!-- <div class="card p-6">
       <div class="flex flex-col lg:flex-row gap-6 items-center">
-        <!-- 颜色预览 -->
         <div class="flex flex-col items-center gap-4">
           <div
             class="w-32 h-32 rounded-2xl border-4 border-white shadow-xl cursor-pointer transition-transform hover:scale-105"
@@ -30,7 +29,6 @@
           </div>
         </div>
 
-        <!-- 快捷操作 -->
         <div class="flex-1 space-y-4">
           <div class="flex gap-2 flex-wrap">
             <button
@@ -56,7 +54,6 @@
             </button>
           </div>
           
-          <!-- 预设颜色 -->
           <div class="space-y-2">
             <div class="text-sm font-medium">快选颜色</div>
             <div class="grid grid-cols-8 md:grid-cols-12 gap-2">
@@ -72,7 +69,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- 颜色格式转换 -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
