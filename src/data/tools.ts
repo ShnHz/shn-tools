@@ -123,6 +123,7 @@ export const tools: ToolInfo[] = [
     icon: 'Eye',
     featured: true,
     tags: ['Markdown', 'HTML', '预览'],
+    implemented: true,
   },
   {
     id: 'json-pretty',
@@ -141,6 +142,7 @@ export const tools: ToolInfo[] = [
     category: 'text',
     icon: 'RefreshCw',
     tags: ['YAML', 'JSON', '转换'],
+    implemented: true,
   },
   {
     id: 'html-to-text',
@@ -239,6 +241,7 @@ export const tools: ToolInfo[] = [
     category: 'color',
     icon: 'Star',
     tags: ['favicon', '图标', '网站'],
+    implemented: true,
   },
   {
     id: 'css-clamp',
@@ -292,6 +295,7 @@ export const tools: ToolInfo[] = [
     category: 'encode',
     icon: 'Hash',
     tags: ['MD5', '哈希', '加密'],
+    implemented: true,
   },
   {
     id: 'sha256-hash',
